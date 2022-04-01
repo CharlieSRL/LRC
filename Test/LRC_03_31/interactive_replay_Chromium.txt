@@ -1,7 +1,0 @@
-Virtual User Script started at : 2022-03-30 11:28:32
-Running Vuser...
-Starting iteration 1.
-Notify: Transaction "S03_T01_Load_Login_Page" started.
-Notify: Transaction "S03_T01_Load_Login_Page" ended with a "Pass" status (Duration: 3.1720 Wasted Time: 0.5140).
-Ending Vuser...
-Vuser Terminated.

@@ -1,0 +1,44 @@
+[General]
+Type=DevWeb
+DefaultCfg=default.cfg
+MajorVersion=2020
+MinorVersion=3
+ParameterFile=
+GlobalParameterFile=
+RunType=DevWeb
+NewFunctionHeader=1
+ActionLogicExt=action_logic
+LastActiveAction=Main
+ScriptLanguage=JavaScript
+Encoding=UTF8
+DevelopTool=Vugen
+LastModifyVer=2020.3.0.0
+ActiveTypes=DevWeb
+AdditionalTypes=DevWeb
+GenerateTypes=DevWeb
+ParamLeftBrace={
+ParamRightBrace=}
+LastCodeGenerationVer=
+DisableRegenerate=0
+Description=
+ScriptLocale=pt-BR
+[ExtraFiles]
+parameters.yml=
+rts.yml=
+[Actions]
+Main=main.js
+[Recorded Actions]
+Main=0
+[Interpreters]
+Main=DevWeb
+[Modified Actions]
+Main=0
+[Replayed Actions]
+Main=0
+[TransactionsOrder]
+Order=
+[StateManagement]
+LastReplayStatus=0
+[ActiveReplay]
+LastReplayedRunName=
+ActiveRunName=

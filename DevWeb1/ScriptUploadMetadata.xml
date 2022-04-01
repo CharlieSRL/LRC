@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VugenScriptMetadata>
+  <ScriptName>DevWeb1</ScriptName>
+  <Protocol>DevWeb</Protocol>
+  <ActionFiles>
+    <FileEntry Name="main.js" Filter="2" />
+  </ActionFiles>
+  <GeneralFiles>
+    <FileEntry Name="DevWeb1.usr" Filter="4" />
+    <FileEntry Name="default.cfg" Filter="4" />
+    <FileEntry Name="default.usp" Filter="4" />
+    <FileEntry Name="parameters.yml" Filter="2" />
+    <FileEntry Name="rts.yml" Filter="2" />
+    <FileEntry Name="minimal_test.js" Filter="2" />
+    <FileEntry Name="scenario.yml" Filter="2" />
+    <FileEntry Name="users.csv" Filter="2" />
+    <FileEntry Name="Action.c" Filter="1" />
+    <FileEntry Name="Bookmarks.xml" Filter="1" />
+    <FileEntry Name="Breakpoints.xml" Filter="1" />
+    <FileEntry Name="ScriptUploadMetadata.xml" Filter="1" />
+    <FileEntry Name="UserTasks.xml" Filter="1" />
+    <FileEntry Name="vuser_end.c" Filter="1" />
+    <FileEntry Name="vuser_init.c" Filter="1" />
+  </GeneralFiles>
+</VugenScriptMetadata>

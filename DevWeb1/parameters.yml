@@ -1,0 +1,18 @@
+parameters:
+- columnName: userdni
+  fileName: users.dat
+  name: userdni
+  nextRow: unique
+  nextValue: once
+  onEnd: loop
+  type: csv
+  blockSize: 1
+
+- columnName: userpasswd
+  fileName: users.dat
+  name: userpasswd
+  nextRow: same as userdni
+  nextValue: iteration
+  onEnd: loop
+  type: csv
+  blockSize: 1

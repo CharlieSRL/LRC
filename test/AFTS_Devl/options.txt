@@ -1,0 +1,9 @@
+-+
+-DCCI
+-D_IDA_XL
+-DWINNT
+-IC:\Users\s4uvik\repositories\ges-perf-test-scripts\LRC\Devl\lr-scr\AFTS_Devl
+-IC:\Program Files (x86)\Micro Focus\LoadRunner\include
+-ec:\users\s4uvik\repositories\ges-perf-test-scripts\lrc\devl\lr-scr\afts_devl\\logfile.log
+c:\users\s4uvik\repositories\ges-perf-test-scripts\lrc\devl\lr-scr\afts_devl\\combined_AFTS_Devl.c
+c:\users\s4uvik\repositories\ges-perf-test-scripts\lrc\devl\lr-scr\afts_devl\\pre_cci.c

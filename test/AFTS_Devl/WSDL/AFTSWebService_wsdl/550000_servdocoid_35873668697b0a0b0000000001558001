@@ -1,0 +1,121 @@
+<xs:schema elementFormDefault="qualified" jxb:version="1.0" targetNamespace="urn:www-uniformdataportal-com:ucdp-afts-2013-09" xmlns:jxb="http://java.sun.com/xml/ns/jaxb" xmlns:tns="urn:www-uniformdataportal-com:ucdp-afts-2013-09" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	
+	<xs:import namespace="http://www.w3.org/2005/05/xmlmime" schemaLocation="https://int-webservices.intgfanniemae.com/ssg/wsdl/Base64Binary.xsd?serviceoid=c743944910190ef10000000001550000&amp;servdocoid=35873668697b0a0b0000000001558000"/>
+
+	<xs:annotation>
+        <xs:appinfo>
+            <jxb:schemaBindings>
+                <jxb:package name="com.fanniemae.acquisitions.cdds.service.afts.bean.jxb">
+                    <jxb:javadoc>
+                        <![CDATA[<body> AFTS Req/Resp XSD package. </body>]]> 
+                    </jxb:javadoc>
+                </jxb:package>
+            </jxb:schemaBindings>
+        </xs:appinfo>
+    </xs:annotation> 
+    
+    <xs:element name="AFTSHeader" type="tns:AFTSHeaderType"/>
+	<xs:element name="DocumentTransferRequest" type="tns:DocumentTransferRequestType"/>
+	<xs:element name="DocumentTransferResponse" type="tns:DocumentTransferResponseType"/>
+	
+	<xs:complexType name="DocumentTransferRequestType">
+		<xs:sequence>
+			<xs:element name="fileContent" type="xmime:base64Binary" xmime:expectedContentTypes="text/xml"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="DocumentTransferResponseType">
+		<xs:sequence>
+			<xs:element name="TransmissionRequestID" type="xs:string"/>
+			<xs:element name="TransferStatus" type="tns:TransferStatusType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="TransferStatusType">
+		<xs:sequence>
+			<xs:element name="Status" type="tns:StatusType"/>
+			<xs:element minOccurs="0" name="ErrorCode" type="tns:ErrorCodeType"/>
+			<xs:element minOccurs="0" name="ErrorMessage" type="xs:string"/>
+			<xs:element minOccurs="0" name="ErrorType" type="tns:ErrorEnumType"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:simpleType name="StatusType">
+		<xs:annotation>
+			<xs:documentation> Defines the status of document transfer.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Successful"/>
+			<xs:enumeration value="Error"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="ErrorEnumType">
+		<xs:annotation>
+			<xs:documentation> Defines the type of error occurred in the system.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="PAYLOAD"/>
+			<xs:enumeration value="SYSTEM"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="ErrorCodeType">
+		<xs:annotation>
+			<xs:documentation> Defines all different error codes.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="AFTS_001"/>
+			<xs:enumeration value="AFTS_002"/>
+			<xs:enumeration value="AFTS_003"/>
+			<xs:enumeration value="AFTS_004"/>
+			<xs:enumeration value="AFTS_005"/>
+			<xs:enumeration value="AFTS_006"/>
+			<xs:enumeration value="AFTS_007"/>
+			<xs:enumeration value="AFTS_008"/>
+			<xs:enumeration value="AFTS_009"/>
+			<xs:enumeration value="AFTS_010"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="AFTSHeaderType">
+		<xs:sequence>
+			<xs:element name="DocumentFileID" type="tns:DocFileIDType"/>
+			<xs:element name="PortalDocumentID" type="tns:PortalDocIDType"/>
+			<xs:element name="SequenceNumber" type="tns:SequenceNumberType"/>			
+			<xs:element name="TransmissionRequestID" type="tns:nonEmptyStringType"/>
+			<xs:element name="Checksum" type="tns:nonEmptyStringType"/>
+			<xs:element name="PortalSubmissionDateTime" type="xs:dateTime"/>
+			<xs:element name="PortalUpdateDateTime" type="xs:dateTime"/>
+			<xs:element name="PortalSentDateTime" type="xs:dateTime"/>
+			<xs:element minOccurs="0" name="DocXPathInfo" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="DocFileIDType">
+		<xs:restriction base="xs:string">
+			<xs:length value="10"/>
+			<xs:pattern value="[1-9A-H][0-9A-H]{9}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SequenceNumberType">
+		<xs:annotation>
+			<xs:documentation>Defines all the values allowed for this element (1, 2, 3).</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:integer">
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PortalDocIDType">
+		<xs:restriction base="xs:nonNegativeInteger">
+		 	<xs:totalDigits value="36"/>
+		 </xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="nonEmptyStringType">
+		<xs:restriction base="xs:string">
+		 	<xs:minLength value="1"/>
+		 </xs:restriction>
+	</xs:simpleType>
+
+</xs:schema>

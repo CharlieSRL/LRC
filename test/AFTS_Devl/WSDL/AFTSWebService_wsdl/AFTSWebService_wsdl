@@ -1,0 +1,49 @@
+<wsdl:definitions name="AFTSWebService" targetNamespace="urn:www-uniformdataportal-com:ucdp-afts-2013-09" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="urn:www-uniformdataportal-com:ucdp-afts-2013-09" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<wsdl:documentation>
+			WSDL for communication from portal to AFTS WS 
+	</wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema>
+			<xsd:import namespace="urn:www-uniformdataportal-com:ucdp-afts-2013-09" schemaLocation="https://int-webservices.intgfanniemae.com/ssg/wsdl/AFTSWebService?serviceoid=c743944910190ef10000000001550000&amp;servdocoid=35873668697b0a0b0000000001558001"/>
+		</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="DocumentTransferResponse">
+    <wsdl:part element="tns:DocumentTransferResponse" name="DocumentTransferResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="AFTSHeader">
+    <wsdl:part element="tns:AFTSHeader" name="AFTSHeader">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DocumentTransferRequest">
+    <wsdl:part element="tns:DocumentTransferRequest" name="DocumentTransferRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="DocumentTransferIntf">
+    <wsdl:operation name="DocumentTransfer">
+      <wsdl:input message="tns:DocumentTransferRequest" name="DocumentTransferRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:DocumentTransferResponse" name="DocumentTransferResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DocumentTransferIntfHttpBinding" type="tns:DocumentTransferIntf">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="DocumentTransfer">
+      <soap:operation soapAction="urn:www-uniformdataportal-com:ucdp-afts-2013-09/DocumentTransferIntf/DocumentTransfer"/>
+      <wsdl:input name="DocumentTransferRequest">
+        <soap:body use="literal"/>
+        <soap:header message="tns:AFTSHeader" part="AFTSHeader" use="literal">
+        </soap:header>
+      </wsdl:input>
+      <wsdl:output name="DocumentTransferResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AFTSWebService">
+    <wsdl:port binding="tns:DocumentTransferIntfHttpBinding" name="AFTSWebServiceDocumentTransferIntfHttpBinding">
+      <soap:address location="https://int-webservices.intgfanniemae.com/AFTSWebService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

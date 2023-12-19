@@ -87,3 +87,5 @@ AFTS_8MB=
 AFTS_12MB=
 AFTS_14MB=
 AFTS_20MB=
+[ManuallyExtraFiles]
+AFTS_5.5MB.txt=
